@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .profile, .edit-form {
+            margin-bottom: 20px;
+        }
+        .edit-form {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile">
+        <h2>User Profile</h2>
+        <p id="username">Username: JohnDoe</p>
+        <p id="email">Email: johndoe@example.com</p>
+        <button id="editButton">Edit Profile</button>
+    </div>
+
+    <div class="edit-form">
+        <h2>Edit Profile</h2>
+        <label for="editUsername">Username:</label>
+        <input type="text" id="editUsername" value="JohnDoe"><br><br>
+        <label for="editEmail">Email:</label>
+        <input type="email" id="editEmail" value="johndoe@example.com"><br><br>
+        <button id="saveButton">Save Changes</button>
+    </div>
+
+    <script>
+        const editButton = document.getElementById('editButton');
+        const editForm = document.querySelector('.edit-form');
+        const saveButton = document.getElementById('saveButton');
+        const usernameDisplay = document.getElementById('username');
+        const emailDisplay = document.getElementById('email');
+
+        editButton.addEventListener('click', () => {
+            editForm.style.display = 'block';
+            editButton.style.display = 'none';
+        });
+
+        saveButton.addEventListener('click', () => {
+            const newUsername = document.getElementById('editUsername').value;
+            const newEmail = document.getElementById('editEmail').value;
+
+            usernameDisplay.textContent = 'Username: ' + newUsername;
+            emailDisplay.textContent = 'Email: ' + newEmail;
+
+            editForm.style.display = 'none';
+            editButton.style.display = 'block';
+        });
+    </script>
+    
+</body>
+</html>
+
+</body>
+<script src="trjs"></script>
+</html>
